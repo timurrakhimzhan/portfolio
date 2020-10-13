@@ -10,6 +10,8 @@ import {onLoginClick, onRegisterClick} from "./authentication";
 import {Credentials} from "../../../../typings";
 import {schemaAuthentication} from "../../../utils/validators";
 import {useCookies} from "react-cookie";
+import { loginAction } from "../../../redux/reducers/userSlice";
+import {AppDispatch, useAppDispatch} from "../../../redux/store";
 
 
 
@@ -18,9 +20,10 @@ export function SingInUpForm({onForgotClick, setSuccessRegistration}: {onForgotC
     const {values, errors, valid, handleChange, handleSubmit} = useForm({email: "", password: ""} as Credentials, schemaAuthentication);
     const [serverErrors, setServerErrors] = useState({email: "", password: ""});
     const [,setCookie, ] = useCookies(["accessToken", "email"]);
+    const dispatch: AppDispatch = useAppDispatch();
 
-    const successLogin = (uuid: string, token: string) => {
-        localStorage.setItem("uuid", uuid);
+    const successLogin = (uuid: number, email: string, token: string): void=> {
+        dispatch(loginAction({logged_in: true, uuid, email}));
         setCookie("accessToken", token, {httpOnly: true});
     };
 

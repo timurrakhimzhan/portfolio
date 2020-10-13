@@ -24,3 +24,9 @@ export interface ServerError {
     message: string;
     field?: string;
 }
+
+export interface UserState {
+    logged_in: boolean;
+    email?: string;
+    uuid?: number;
+}
