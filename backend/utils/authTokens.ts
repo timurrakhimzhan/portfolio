@@ -1,6 +1,7 @@
 import {sign, verify} from 'jsonwebtoken';
 import Tokens from "csrf";
 import {Request} from "express";
+import {SERVER_SESSION_ERROR} from "./constants";
 
 const SECRET_WORD = "secretWord";
 
@@ -18,7 +19,7 @@ export const checkJWT = (jwt: string): boolean => {
 export const getCsrf = async(req: Request): Promise<string> => {
     const tokens: Tokens = new Tokens();
     if(!req.session) {
-        throw new Error("Server error: could not create session");
+        throw new Error(SERVER_SESSION_ERROR);
     }
     if(!req.session.csrfSecret){
         req.session.csrfSecret = await tokens.secret();
@@ -28,11 +29,8 @@ export const getCsrf = async(req: Request): Promise<string> => {
 
 export const checkCsrf = (token: string, req: Request): boolean => {
     const tokens: Tokens = new Tokens();
-    if(!req.session) {
-        throw new Error("Server error");
-    }
-    if(!req.session.csrfSecret){
+    if(!req!.session!.csrfSecret){
         return false;
     }
-    return tokens.verify(req.session.csrfSecret, token)
+    return tokens.verify(req.session!.csrfSecret, token)
 };
