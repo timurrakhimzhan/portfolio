@@ -1,12 +1,12 @@
 import {Response, Request} from "express";
 import {User} from "../entity/User";
 
-export async function isloggedInHandle(req: Request, res: Response){
+export async function fetchUserInfoHandler(req: Request, res: Response){
     const {uuid} = req.query as {uuid: string};
-    const count = await User.count({uuid});
-    if(!count) {
+    const user: User | undefined = await User.findOne({uuid});
+    if(!user) {
         res.status(403).send([{message: "User not presented in database"}]);
         return;
     }
-    res.send({logged_in: true});
+    res.send({uuid, email: user.email});
 }

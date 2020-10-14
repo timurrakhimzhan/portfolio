@@ -35,8 +35,14 @@ export async function loginHandle(req: Request, res: Response){
         user.lastLoginDate = new Date();
         await user.save();
 
+        if(!req.session) {
+            res.status(500).send([{message: "Server error: could not create session"}]);
+            return;
+        }
+
         const jwt = getJWT(user.uuid);
         const csrfToken: string = await getCsrf(req);
+        req.session.uuid = user.uuid;
         res.cookie("jwt", jwt, {httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 7});
         res.set("CSRF-TOKEN", csrfToken);
         res.status(200).send({uuid: user.uuid, email: user.email});

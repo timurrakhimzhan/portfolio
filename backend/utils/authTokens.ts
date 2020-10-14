@@ -18,7 +18,7 @@ export const checkJWT = (jwt: string): boolean => {
 export const getCsrf = async(req: Request): Promise<string> => {
     const tokens: Tokens = new Tokens();
     if(!req.session) {
-        throw new Error("Server error");
+        throw new Error("Server error: could not create session");
     }
     if(!req.session.csrfSecret){
         req.session.csrfSecret = await tokens.secret();

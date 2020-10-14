@@ -28,6 +28,8 @@ app.use(session({
     secret: SECRET_WORD,
     cookie: {
         httpOnly: true,
+        maxAge: 1000 * 60 * 60 * 24 * 7,
+        secure: process.env.NODE_ENV === "production"
     },
     resave: true,
     saveUninitialized: true
