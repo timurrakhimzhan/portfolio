@@ -11,5 +11,4 @@ export class CredentialsError {
         this.message = message;
         this.field = field;
     }
-
 }

@@ -3,7 +3,7 @@ import {Credentials, CredentialsError} from "../typings";
 import {validate} from "../utils/authValidation";
 import {User} from "../entity/User";
 import {compare} from "bcrypt";
-import {getAccessToken} from "../utils/getAccessToken";
+import {getCsrf, getJWT} from "../utils/authTokens";
 
 
 export async function loginHandle(req: Request, res: Response){
@@ -31,12 +31,16 @@ export async function loginHandle(req: Request, res: Response){
             res.status(400).send([error]);
             return;
         }
-        const accessToken = getAccessToken(user.uuid);
+
         user.lastLoginDate = new Date();
         await user.save();
-        res.status(200).send({accessToken, uuid: user.uuid});
+
+        const jwt = getJWT(user.uuid);
+        const csrfToken: string = await getCsrf(req);
+        res.cookie("jwt", jwt, {httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 7});
+        res.set("CSRF-TOKEN", csrfToken);
+        res.status(200).send({uuid: user.uuid, email: user.email});
     } catch(error) {
-        console.log("Error", error);
         res.status(500).send([{message: error.message}]);
     }
 }
