@@ -4,7 +4,7 @@ import {faBars} from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 
 
-export function MenuToggleIcon({onClick}: {onClick: any}) {
+export function MenuToggleIcon({onClick}: {onClick: () => any}) {
     return <CustomFontAwesome icon={faBars} onClick={onClick}/>
 }
 

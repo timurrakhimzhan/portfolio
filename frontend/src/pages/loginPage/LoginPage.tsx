@@ -5,12 +5,17 @@ import {ForgotForm} from "./forgotForm/ForgotForm";
 import {LogoImage} from "./logo/LogoImage";
 import {SuccessRegistration} from "./successRegistration/SuccessRegistration";
 import {VerticalSpace} from "../../reusable-components/Spaces";
+import {Redirect} from "react-router-dom";
+import {useSelector} from "react-redux";
+import {RootState} from "../../redux/store";
 
 export function LoginPage() {
     const [isForgotPass, setForgotPass] = useState(false);
     const [isSuccessRegistration, setSuccessRegistration] = useState(false);
+    const {logged_in} = useSelector((state: RootState) => state.user);
     return (
         <LoginPageWrapper>
+            {logged_in ? <Redirect to={"/"} /> : null}
             <LogoImage src={process.env.PUBLIC_URL + "/rapeera-logo.png"} />
             <VerticalSpace height={"20px"} />
             {isSuccessRegistration ?

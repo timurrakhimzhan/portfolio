@@ -2,9 +2,12 @@ import React from "react";
 import {Switch, Route} from 'react-router-dom';
 import {HomePage} from "../pages/homePage/HomePage";
 import {LoginPage} from "../pages/loginPage/LoginPage";
-import {RouteI} from "../../typings";
+import {RouteItem} from "../../typings";
+import {isAuth} from "../utils/isAuth";
+import {PrivateRoute} from "../reusable-components/hocs/PrivateRoute";
+import {LogoutPage} from "../pages/logoutPage/LogoutPage";
 
-export const routes: Array<RouteI> = [
+export const routes: Array<RouteItem> = [
     {
         path: "/",
         label: "Home",
@@ -13,7 +16,20 @@ export const routes: Array<RouteI> = [
     {
         path: "/login",
         label: "Log in",
-        component: <LoginPage/>
+        component: <LoginPage/>,
+        protection: {
+            protectionFunc: () => !isAuth(),
+            redirectPath: "/"
+        }
+    },
+    {
+        path: "/logout",
+        label: "Log out",
+        component: <LogoutPage/>,
+        protection: {
+            protectionFunc: () => isAuth(),
+            redirectPath: "/"
+        }
     }
 
 ];
@@ -21,11 +37,21 @@ export const routes: Array<RouteI> = [
 export function Routing() {
     return (
         <Switch>
-            {routes.map((route: RouteI) =>
-                <Route exact path={route.path} key={route.path}>
-                    {route.component}
-                </Route>
-            )}
+            {
+                routes.map((route: RouteItem) => {
+                    if(route.protection) {
+                        return <PrivateRoute protectionFunc={route.protection.protectionFunc}
+                                             redirectPath={route.protection.redirectPath}
+                                             path={route.path} exact key={route.label}>
+                            {route.component}
+                        </PrivateRoute>
+                    } else {
+                        return <Route path={route.path} exact key={route.label}>
+                            {route.component}
+                        </Route>
+                    }
+                })
+            }
         </Switch>
     )
 }

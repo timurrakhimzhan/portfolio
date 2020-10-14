@@ -1,28 +1,27 @@
 import {FormEvent, useEffect, useState} from "react";
 import {ObjectSchema, ValidationError} from "yup";
+import mapValues from 'lodash/mapValues';
 
-export function useForm(schema: {[key: string]: any}, validationSchema: ObjectSchema) {
-    const [values, setValues] = useState(schema);
-
-    const [hasChanged, setHasChanges] = useState(Object.fromEntries(Object.entries(schema).map(([key]) => [key, false])));
-
-    const [errors, setErrors] = useState(Object.fromEntries(Object.entries(schema).map(([key]) => [key, ""])));
-
-    const [valid, setValid] = useState(false);
+export function useForm<T extends {[key: string]: string}>(schema: T, validationSchema: ObjectSchema) {
+    const [values, setValues] = useState<T>(schema);
+    const [hasChanged, setHasChanges] = useState<{[key in keyof T]: boolean}>(mapValues(schema, () => false));
+    const [formClientErrors, setFormClientErrors] = useState<{[key in keyof T]: string}>(mapValues(schema, () => "")) ;
+    const [valid, setValid] = useState<boolean>(false);
 
     const handleChange = (e: FormEvent<HTMLElement>) => {
         const {name, value} = (e.target as HTMLInputElement);
-        const newValues = {...values, [name]: value};
+        const newValues: T = {...values, [name]: value};
         validationSchema.validate(newValues, {abortEarly: false})
-            .then(() => setErrors(Object.fromEntries(Object.entries(schema).map(([key]) => [key, ""]))))
+            .then(() => setFormClientErrors(mapValues(schema, () => "")))
             .catch((errors: ValidationError) => {
-                const newErrors = Object.fromEntries(Object.entries(schema).map(([key]) => [key, ""]));
+                const newErrors = mapValues(schema, () => "");
                 errors.inner.forEach((error: ValidationError) => {
-                    if(newErrors.hasOwnProperty(error.path) && newErrors[error.path].length === 0 && hasChanged[error.path]) {
-                        newErrors[error.path] = error.message;
+                    const field: keyof T = error.path;
+                    if(newErrors.hasOwnProperty(field) && newErrors[field]?.length === 0 && hasChanged[field]) {
+                        newErrors[field] = error.message;
                     }
                 });
-                setErrors(newErrors);
+                setFormClientErrors(newErrors);
             }
         );
         setValues(newValues);
@@ -31,18 +30,22 @@ export function useForm(schema: {[key: string]: any}, validationSchema: ObjectSc
 
     useEffect(() => {
         let valid = true;
-        Object.entries(errors).forEach(([key, error]) => (error.length || !hasChanged[key] ? valid = false : null));
+        Object.entries(formClientErrors).forEach(([key, error]) => {
+            if(error.length || !hasChanged[key]) {
+                valid = false;
+            }
+        });
         setValid(valid);
-    }, [errors, hasChanged]);
+    }, [formClientErrors, hasChanged]);
 
     const handleSubmit = (e: FormEvent) => e.preventDefault();
 
     const reset = () => {
         setValues(schema);
-        setErrors(Object.fromEntries(Object.entries(schema).map(([key]) => [key, ""])));
-        setHasChanges(Object.fromEntries(Object.entries(schema).map(([key]) => [key, false])));
+        setFormClientErrors(mapValues(schema, () => ""));
+        setHasChanges(mapValues(schema, () => false));
         setValid(false);
     };
 
-    return {errors, values, valid, handleSubmit, reset, handleChange};
+    return {errors: formClientErrors, values, valid, handleSubmit, reset, handleChange};
 }

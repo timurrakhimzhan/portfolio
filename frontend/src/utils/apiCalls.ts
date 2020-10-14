@@ -8,5 +8,20 @@ export function register({email, password}: Credentials) {
 }
 
 export function login({email, password}: Credentials) {
-    return axios.get(API_URL + "/login", {params: {email, password}});
+    return axios.get(API_URL + "/login", {params: {email, password}, withCredentials: true});
+}
+
+export function logout() {
+    return axios.get(API_URL + "/logout", {withCredentials: true});
+}
+
+export function fetchUserInfo(csrfToken: string) {
+    return axios.get(API_URL + "/fetchUserInfo",
+        {
+            withCredentials: true,
+            headers: {
+                "CSRF-TOKEN": csrfToken
+            }
+        },
+    );
 }

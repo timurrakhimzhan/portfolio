@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87932492-87ee-4d35-91bd-94b76ee8737b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../backend/routes/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/routes/login.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/routes/fetchUserInfo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/routes/protectedRoutes/fetchUserInfo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/routes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/routes/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +38,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/redux/actions-reducers/user/loginAction.ts" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -50,14 +51,17 @@
   </component>
   <component name="RecentsManager">
     <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/src/redux/actions-reducers/user/loginAction.ts" />
+      <recent name="$PROJECT_DIR$/src/redux/actions-reducers/user/logoutAction.ts" />
+      <recent name="$PROJECT_DIR$/src/redux/actions-reducers/user/fetchUserInfoAction.ts" />
       <recent name="$PROJECT_DIR$/src/layout/header/HeaderWrapper.tsx" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/redux/reducers/userReducer" />
       <recent name="$PROJECT_DIR$/src/utils" />
+      <recent name="$PROJECT_DIR$/src/pages" />
+      <recent name="$PROJECT_DIR$/src/reusable-components" />
       <recent name="$PROJECT_DIR$/src/pages/loginPage/singInUp" />
-      <recent name="$PROJECT_DIR$/src/pages/loginPage" />
-      <recent name="$PROJECT_DIR$/src/pages/loginPage/singInUp/forgotForm" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -78,7 +82,7 @@
       <workItem from="1602327915704" duration="3122000" />
       <workItem from="1602517203074" duration="2147000" />
       <workItem from="1602524002954" duration="29837000" />
-      <workItem from="1602614384960" duration="6196000" />
+      <workItem from="1602614384960" duration="31276000" />
     </task>
     <servers />
   </component>
@@ -94,20 +98,20 @@
       <screen x="72" y="41" width="1848" height="1039" />
     </state>
     <state x="391" y="59" width="1200" height="1009" key="#Notifications/72.41.1848.1039@72.41.1848.1039" timestamp="1602623503614" />
-    <state x="450" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602028960336">
+    <state x="450" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602651641194">
       <screen x="72" y="41" width="1848" height="1039" />
     </state>
-    <state x="450" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.41.1848.1039@72.41.1848.1039" timestamp="1602028960336" />
+    <state x="450" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.41.1848.1039@72.41.1848.1039" timestamp="1602651641194" />
     <state x="663" y="256" width="655" height="628" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602008160880">
       <screen x="72" y="49" width="1848" height="1031" />
     </state>
     <state x="663" y="256" width="655" height="628" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/72.49.1848.1031@72.49.1848.1031" timestamp="1602008160880" />
-    <state x="720" y="267" width="636" height="761" key="FileChooserDialogImpl" timestamp="1602625048212">
+    <state x="720" y="267" width="636" height="761" key="FileChooserDialogImpl" timestamp="1602656017936">
       <screen x="72" y="41" width="1848" height="1039" />
     </state>
     <state x="720" y="261" key="FileChooserDialogImpl/72.33.1848.1047@72.33.1848.1047" timestamp="1602335328437" />
     <state x="720" y="262" width="530" height="605" key="FileChooserDialogImpl/72.34.1848.1046@72.34.1848.1046" timestamp="1601849038507" />
-    <state x="720" y="267" width="636" height="761" key="FileChooserDialogImpl/72.41.1848.1039@72.41.1848.1039" timestamp="1602625048212" />
+    <state x="720" y="267" width="636" height="761" key="FileChooserDialogImpl/72.41.1848.1039@72.41.1848.1039" timestamp="1602656017936" />
     <state width="910" height="258" key="GridCell.Tab.0.bottom" timestamp="1602025624873">
       <screen x="72" y="41" width="1848" height="1039" />
     </state>
@@ -124,26 +128,26 @@
       <screen x="72" y="41" width="1848" height="1039" />
     </state>
     <state width="910" height="258" key="GridCell.Tab.0.right/72.41.1848.1039@72.41.1848.1039" timestamp="1602025624873" />
-    <state x="271" y="41" width="1037" height="1039" key="find.popup" timestamp="1602554223068">
+    <state x="271" y="41" width="1037" height="1039" key="find.popup" timestamp="1602661443889">
       <screen x="72" y="41" width="1848" height="1039" />
     </state>
     <state x="271" y="33" width="1037" height="1047" key="find.popup/72.33.1848.1047@72.33.1848.1047" timestamp="1602199067154" />
-    <state x="271" y="41" width="1037" height="1039" key="find.popup/72.41.1848.1039@72.41.1848.1039" timestamp="1602554223068" />
+    <state x="271" y="41" width="1037" height="1039" key="find.popup/72.41.1848.1039@72.41.1848.1039" timestamp="1602661443889" />
     <state x="615" y="51" width="752" height="1026" key="refactoring.ChangeSignatureDialog" timestamp="1602549208858">
       <screen x="72" y="41" width="1848" height="1039" />
     </state>
     <state x="615" y="51" width="752" height="1026" key="refactoring.ChangeSignatureDialog/72.41.1848.1039@72.41.1848.1039" timestamp="1602549208858" />
-    <state x="576" y="256" key="run.anything.popup" timestamp="1602560921656">
+    <state x="576" y="256" key="run.anything.popup" timestamp="1602641140467">
       <screen x="72" y="41" width="1848" height="1039" />
     </state>
     <state x="576" y="250" key="run.anything.popup/72.33.1848.1047@72.33.1848.1047" timestamp="1602205234098" />
     <state x="576" y="250" key="run.anything.popup/72.34.1848.1046@72.34.1848.1046" timestamp="1601848117815" />
-    <state x="576" y="256" key="run.anything.popup/72.41.1848.1039@72.41.1848.1039" timestamp="1602560921656" />
-    <state x="575" y="52" width="1009" height="1028" key="search.everywhere.popup" timestamp="1602541788508">
+    <state x="576" y="256" key="run.anything.popup/72.41.1848.1039@72.41.1848.1039" timestamp="1602641140467" />
+    <state x="575" y="52" width="1009" height="1028" key="search.everywhere.popup" timestamp="1602640322254">
       <screen x="72" y="41" width="1848" height="1039" />
     </state>
     <state x="575" y="44" width="1009" height="1036" key="search.everywhere.popup/72.33.1848.1047@72.33.1848.1047" timestamp="1602197934423" />
     <state x="575" y="45" width="840" height="1034" key="search.everywhere.popup/72.34.1848.1046@72.34.1848.1046" timestamp="1601851231173" />
-    <state x="575" y="52" width="1009" height="1028" key="search.everywhere.popup/72.41.1848.1039@72.41.1848.1039" timestamp="1602541788508" />
+    <state x="575" y="52" width="1009" height="1028" key="search.everywhere.popup/72.41.1848.1039@72.41.1848.1039" timestamp="1602640322254" />
   </component>
 </project>

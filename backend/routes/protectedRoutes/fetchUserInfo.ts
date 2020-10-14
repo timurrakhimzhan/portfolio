@@ -1,7 +1,6 @@
 import {Response, Request} from "express";
-import {User} from "../entity/User";
-import {USER_NOT_IN_DB} from "../utils/constants";
-import {} from "express-session";
+import {User} from "../../entity/User";
+import {USER_NOT_IN_DB} from "../../utils/constants";
 
 export async function fetchUserInfoHandler(req: Request, res: Response){
     const uuid = req!.session!.uuid;

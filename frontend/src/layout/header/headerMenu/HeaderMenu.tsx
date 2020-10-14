@@ -9,10 +9,12 @@ import {MenuItem} from "./MenuItem";
 export function HeaderMenu() {
     const history = useHistory();
     return (<HeaderMenuWrapper>
-        {routes.map((route) =>
-            <MenuItem key={route.path} onClick={() => history.push(route.path)}>
-                {route.label.toUpperCase()}
-            </MenuItem>
-        )}
+        {routes.filter((route) => !route.protection || route.protection.protectionFunc())
+            .map((route) =>
+                (<MenuItem key={route.path} onClick={() => history.push(route.path)}>
+                        {route.label.toUpperCase()}
+                </MenuItem>)
+            )
+        }
     </HeaderMenuWrapper>)
 }

@@ -9,24 +9,37 @@ export interface ShowToggleProps {
     show: boolean
 }
 
-export interface RouteI {
+export type RouteItem =  {
     path: string;
     label: string;
     component: ReactComponentElement<any>;
+    protection?: RouteProtection
 }
 
-export interface Credentials {
+export interface RouteProtection {
+    protectionFunc(): boolean | Promise<boolean>,
+    redirectPath: string
+}
+
+export type Credentials = {
     email: string;
     password: string;
 }
 
-export interface ServerError {
+export type ServerError = {
     message: string;
     field?: string;
 }
 
-export interface UserState {
-    logged_in: boolean;
+export type AuthFormError = {
     email?: string;
-    uuid?: number;
+    password?: string
+}
+
+export type UserState = {
+    logged_in: boolean;
+    successfulRegistration: boolean;
+    email?: string;
+    uuid?: string;
+    authFormServerError?: AuthFormError;
 }
