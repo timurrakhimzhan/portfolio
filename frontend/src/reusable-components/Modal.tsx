@@ -7,7 +7,7 @@ import {faWindowClose} from "@fortawesome/free-solid-svg-icons";
 export function Modal({children}: {children: any}) {
     return <Cover>
         <ModalWrapper>
-            <Row><CustomFontAwesome icon={faWindowClose}/></Row>
+            <Row><CustomFontAwesome icon={faWindowClose} size={"1x"}/></Row>
             {children}
         </ModalWrapper>
     </Cover>
@@ -46,11 +46,6 @@ const Row = styled.div`
 const CustomFontAwesome = styled(FontAwesomeIcon)`
     color: var(--black-main);
     cursor: pointer;
-    font-size: 1em;
-    @media only screen
-    and (max-width: 480px) {
-        font-size: 2em;
-    };
     :hover {
         color: var(--grey-main);
     }

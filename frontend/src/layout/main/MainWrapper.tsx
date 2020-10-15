@@ -7,7 +7,6 @@ export const MainWrapper = styled.div`
     background: var(--white-background-main);
     border-radius: 0px;
     align-items: center;
-    padding: 0px 20px;
-    padding-top: 50px;
+    padding: 0px 0px;
     box-sizing: border-box;
 `;

@@ -4,7 +4,7 @@ import {LayoutWrapper} from "./LayoutWrapper";
 import {Main} from "./main/Main";
 import {Sidebar} from "./sidebar/Sidebar";
 import {useAppDispatch} from "../redux/store";
-import {fetchUserInfoAction} from "../redux/actions-reducers/user/fetchUserInfoAction";
+import {fetchUserInfoAction} from "../redux/actions-reducers/asyncThunks/fetchUserInfoAction";
 
 
 export function Layout() {
@@ -12,7 +12,7 @@ export function Layout() {
     const dispatch = useAppDispatch();
     useEffect(() => {
         dispatch(fetchUserInfoAction());
-    });
+    }, [dispatch]);
 
     return (
             <LayoutWrapper>

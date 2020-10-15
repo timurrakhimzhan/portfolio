@@ -1,5 +1,4 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import {initialState} from "./userSlice";
 
 export const logoutAction = createAsyncThunk('user/logout', async () => {
     try {
@@ -8,5 +7,4 @@ export const logoutAction = createAsyncThunk('user/logout', async () => {
     } catch (e) {
         console.log("Error while logouting")
     }
-    return initialState;
 });

@@ -12,3 +12,12 @@ export class CredentialsError {
         this.field = field;
     }
 }
+
+export interface ErrorType {
+    message: string
+}
+
+export type SessionObject = {
+    csrfSecret?: string;
+    uuid?: string;
+}

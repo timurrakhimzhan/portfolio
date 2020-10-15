@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import express, {Express} from 'express';
 import bodyParser from "body-parser";
 import {createConnection} from "typeorm";
@@ -5,8 +7,10 @@ import cors from 'cors';
 import {router} from "./routes";
 import helmet from "helmet";
 import session from 'express-session';
-import {SECRET_WORD} from "./utils/constants";
+import {COOKIE_EXPIRATION_TIME, SECRET_WORD} from "./utils/constants";
 import cookieParser from 'cookie-parser';
+import {isSessionObject} from "./middlewares/isSessionObject";
+
 
 const allowCors = new Set(["http://localhost:3000"]);
 
@@ -28,12 +32,13 @@ app.use(session({
     secret: SECRET_WORD,
     cookie: {
         httpOnly: true,
-        maxAge: 1000 * 60 * 60 * 24 * 7,
+        maxAge: COOKIE_EXPIRATION_TIME,
         secure: process.env.NODE_ENV === "production"
     },
     resave: true,
     saveUninitialized: true
 }));
+app.use(isSessionObject);
 app.use(cookieParser(SECRET_WORD));
 
 

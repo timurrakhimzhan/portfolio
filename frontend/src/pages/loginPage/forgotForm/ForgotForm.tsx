@@ -9,13 +9,14 @@ import {schemaForgotPass} from "../../../utils/validators";
 
 
 export function ForgotForm({onClickSignIn}: {onClickSignIn: Function}) {
-    const {errors, handleChange} = useForm({email: "", password: ""}, schemaForgotPass);
+    const {clientErrors, handleChange, validInput} = useForm({email: "", password: ""}, schemaForgotPass);
 
     return <Form onChange={handleChange}>
         <InputItem label={"Email*:"}
                    type={"email"}
                    name={"email"}
-                   errorMessage={errors['email'] || null}/>
+                   valid={validInput['email']}
+                   errorMessage={clientErrors['email'] || null}/>
         <VerticalSpace height={"20px"}/>
         <ButtonsContainer>
             <Button width={"40%"} onClick={() => onClickSignIn()}>Sign in</Button>

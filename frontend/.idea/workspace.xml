@@ -2,8 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87932492-87ee-4d35-91bd-94b76ee8737b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../backend/routes/fetchUserInfo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/routes/protectedRoutes/fetchUserInfo.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/utils/redis.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/loginPage/registrationInfo/RegistrationInfo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/loginPage/registrationInfo/RegistrationInfoWrapper.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/actions-reducers/asyncThunks/registerAction.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/entity/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/entity/User.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/middlewares/isAuth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/middlewares/isAuth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/routes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/routes/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/routes/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/routes/login.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/routes/protectedRoutes/fetchUserInfo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/routes/protectedRoutes/fetchUserInfo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/routes/protectedRoutes/logout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/routes/protectedRoutes/logout.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/routes/registration.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/routes/registration.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/typings/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/typings/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/utils/authTokens.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/utils/authTokens.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/utils/authValidation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/utils/authValidation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/utils/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/utils/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useForm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useForm.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/Layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/header/headerMenu/HeaderMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/header/headerMenu/HeaderMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/header/menuIcon/MenuToogleIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/header/menuIcon/MenuToogleIcon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/main/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/main/Main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/main/MainWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/main/MainWrapper.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/sidebar/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/sidebar/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/sidebar/SidebarWrapper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/sidebar/SidebarWrapper.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/templates/CSSConstants.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/templates/CSSConstants.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/loginPage/Form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/loginPage/Form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/loginPage/InputItem/CustomItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/loginPage/InputItem/CustomItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/loginPage/InputItem/InputItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/loginPage/InputItem/InputItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/loginPage/InputItem/InputItemWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/loginPage/InputItem/InputItemWrapper.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/loginPage/InputItem/InputLabelContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/loginPage/InputItem/InputLabelContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/loginPage/InputItem/errorLabel/ErrorLabelWrapper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/loginPage/InputItem/errorLabel/ErrorLabelWrapper.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/loginPage/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/loginPage/LoginPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/loginPage/forgotForm/ForgotForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/loginPage/forgotForm/ForgotForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/loginPage/logo/LogoImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/loginPage/logo/LogoImage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/loginPage/singInUp/SignInUpForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/loginPage/singInUp/SignInUpForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/loginPage/successRegistration/SuccessRegistration.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/loginPage/successRegistration/SuccessRegistrationWrapper.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/logoutPage/LogoutPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/logoutPage/LogoutPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions-reducers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions-reducers/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions-reducers/user/fetchUserInfoAction.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions-reducers/asyncThunks/fetchUserInfoAction.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions-reducers/user/loginAction.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions-reducers/asyncThunks/loginAction.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions-reducers/user/logoutAction.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions-reducers/asyncThunks/logoutAction.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions-reducers/user/registerAction.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions-reducers/user/userSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions-reducers/user/userSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reusable-components/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/reusable-components/Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reusable-components/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/reusable-components/Input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reusable-components/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/reusable-components/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routing/Routing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routing/Routing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/apiCalls.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/apiCalls.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/validators.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/typings/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/typings/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +92,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/redux/actions-reducers/user/loginAction.ts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -57,11 +111,11 @@
       <recent name="$PROJECT_DIR$/src/layout/header/HeaderWrapper.tsx" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/redux/actions-reducers/asyncThunks" />
+      <recent name="$PROJECT_DIR$/src/pages" />
       <recent name="$PROJECT_DIR$/src/redux/reducers/userReducer" />
       <recent name="$PROJECT_DIR$/src/utils" />
-      <recent name="$PROJECT_DIR$/src/pages" />
       <recent name="$PROJECT_DIR$/src/reusable-components" />
-      <recent name="$PROJECT_DIR$/src/pages/loginPage/singInUp" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -82,7 +136,9 @@
       <workItem from="1602327915704" duration="3122000" />
       <workItem from="1602517203074" duration="2147000" />
       <workItem from="1602524002954" duration="29837000" />
-      <workItem from="1602614384960" duration="31276000" />
+      <workItem from="1602614384960" duration="44832000" />
+      <workItem from="1602723510661" duration="107000" />
+      <workItem from="1602723623799" duration="10432000" />
     </task>
     <servers />
   </component>
@@ -106,33 +162,33 @@
       <screen x="72" y="49" width="1848" height="1031" />
     </state>
     <state x="663" y="256" width="655" height="628" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/72.49.1848.1031@72.49.1848.1031" timestamp="1602008160880" />
-    <state x="720" y="267" width="636" height="761" key="FileChooserDialogImpl" timestamp="1602656017936">
+    <state x="720" y="267" width="636" height="761" key="FileChooserDialogImpl" timestamp="1602723616150">
       <screen x="72" y="41" width="1848" height="1039" />
     </state>
     <state x="720" y="261" key="FileChooserDialogImpl/72.33.1848.1047@72.33.1848.1047" timestamp="1602335328437" />
     <state x="720" y="262" width="530" height="605" key="FileChooserDialogImpl/72.34.1848.1046@72.34.1848.1046" timestamp="1601849038507" />
-    <state x="720" y="267" width="636" height="761" key="FileChooserDialogImpl/72.41.1848.1039@72.41.1848.1039" timestamp="1602656017936" />
-    <state width="910" height="258" key="GridCell.Tab.0.bottom" timestamp="1602025624873">
+    <state x="720" y="267" width="636" height="761" key="FileChooserDialogImpl/72.41.1848.1039@72.41.1848.1039" timestamp="1602723616150" />
+    <state width="907" height="242" key="GridCell.Tab.0.bottom" timestamp="1602723500303">
       <screen x="72" y="41" width="1848" height="1039" />
     </state>
-    <state width="910" height="258" key="GridCell.Tab.0.bottom/72.41.1848.1039@72.41.1848.1039" timestamp="1602025624873" />
-    <state width="910" height="258" key="GridCell.Tab.0.center" timestamp="1602025624872">
+    <state width="907" height="242" key="GridCell.Tab.0.bottom/72.41.1848.1039@72.41.1848.1039" timestamp="1602723500303" />
+    <state width="907" height="242" key="GridCell.Tab.0.center" timestamp="1602723500302">
       <screen x="72" y="41" width="1848" height="1039" />
     </state>
-    <state width="910" height="258" key="GridCell.Tab.0.center/72.41.1848.1039@72.41.1848.1039" timestamp="1602025624872" />
-    <state width="910" height="258" key="GridCell.Tab.0.left" timestamp="1602025624870">
+    <state width="907" height="242" key="GridCell.Tab.0.center/72.41.1848.1039@72.41.1848.1039" timestamp="1602723500302" />
+    <state width="907" height="242" key="GridCell.Tab.0.left" timestamp="1602723500301">
       <screen x="72" y="41" width="1848" height="1039" />
     </state>
-    <state width="910" height="258" key="GridCell.Tab.0.left/72.41.1848.1039@72.41.1848.1039" timestamp="1602025624870" />
-    <state width="910" height="258" key="GridCell.Tab.0.right" timestamp="1602025624873">
+    <state width="907" height="242" key="GridCell.Tab.0.left/72.41.1848.1039@72.41.1848.1039" timestamp="1602723500301" />
+    <state width="907" height="242" key="GridCell.Tab.0.right" timestamp="1602723500303">
       <screen x="72" y="41" width="1848" height="1039" />
     </state>
-    <state width="910" height="258" key="GridCell.Tab.0.right/72.41.1848.1039@72.41.1848.1039" timestamp="1602025624873" />
-    <state x="271" y="41" width="1037" height="1039" key="find.popup" timestamp="1602661443889">
+    <state width="907" height="242" key="GridCell.Tab.0.right/72.41.1848.1039@72.41.1848.1039" timestamp="1602723500303" />
+    <state x="271" y="41" width="1037" height="1039" key="find.popup" timestamp="1602721581376">
       <screen x="72" y="41" width="1848" height="1039" />
     </state>
     <state x="271" y="33" width="1037" height="1047" key="find.popup/72.33.1848.1047@72.33.1848.1047" timestamp="1602199067154" />
-    <state x="271" y="41" width="1037" height="1039" key="find.popup/72.41.1848.1039@72.41.1848.1039" timestamp="1602661443889" />
+    <state x="271" y="41" width="1037" height="1039" key="find.popup/72.41.1848.1039@72.41.1848.1039" timestamp="1602721581376" />
     <state x="615" y="51" width="752" height="1026" key="refactoring.ChangeSignatureDialog" timestamp="1602549208858">
       <screen x="72" y="41" width="1848" height="1039" />
     </state>
@@ -143,11 +199,11 @@
     <state x="576" y="250" key="run.anything.popup/72.33.1848.1047@72.33.1848.1047" timestamp="1602205234098" />
     <state x="576" y="250" key="run.anything.popup/72.34.1848.1046@72.34.1848.1046" timestamp="1601848117815" />
     <state x="576" y="256" key="run.anything.popup/72.41.1848.1039@72.41.1848.1039" timestamp="1602641140467" />
-    <state x="575" y="52" width="1009" height="1028" key="search.everywhere.popup" timestamp="1602640322254">
+    <state x="575" y="52" width="1009" height="1028" key="search.everywhere.popup" timestamp="1602729901659">
       <screen x="72" y="41" width="1848" height="1039" />
     </state>
     <state x="575" y="44" width="1009" height="1036" key="search.everywhere.popup/72.33.1848.1047@72.33.1848.1047" timestamp="1602197934423" />
     <state x="575" y="45" width="840" height="1034" key="search.everywhere.popup/72.34.1848.1046@72.34.1848.1046" timestamp="1601851231173" />
-    <state x="575" y="52" width="1009" height="1028" key="search.everywhere.popup/72.41.1848.1039@72.41.1848.1039" timestamp="1602640322254" />
+    <state x="575" y="52" width="1009" height="1028" key="search.everywhere.popup/72.41.1848.1039@72.41.1848.1039" timestamp="1602729901659" />
   </component>
 </project>

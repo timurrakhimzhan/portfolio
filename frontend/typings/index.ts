@@ -11,7 +11,7 @@ export interface ShowToggleProps {
 
 export type RouteItem =  {
     path: string;
-    label: string;
+    label?: string;
     component: ReactComponentElement<any>;
     protection?: RouteProtection
 }
@@ -36,10 +36,24 @@ export type AuthFormError = {
     password?: string
 }
 
+export type ApplicationState = {
+    showSpinner: boolean
+}
+
 export type UserState = {
     logged_in: boolean;
-    successfulRegistration: boolean;
     email?: string;
     uuid?: string;
+}
+
+export type AuthenticationState = {
+    registrationInfo?: RegistrationInfoType;
     authFormServerError?: AuthFormError;
 }
+
+export type RegistrationInfoType = {
+    type: ErrorSuccessType,
+    message: string
+}
+
+export type ErrorSuccessType = "error" | "success";

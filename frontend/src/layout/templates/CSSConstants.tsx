@@ -12,11 +12,16 @@ export const CSSConstants = styled.div`
     --grey-main: #cacaca;
     --white-main: #f5f5f5;
     --black-main: #323232;
-    --normal-text-size: 1.3vw;
+    --small-text-size: 0.8em;
+    --normal-text-size: 0.8em;
+    --big-text-size: 1.5em;
     --red-main: #B50000;
+    --green-main: green;
     @media only screen
     and (max-width: 480px) {
         --header-height: 80px;
         --normal-text-size: 1.1em;
+        --big-text-size: 1.8em;
+        --small-text-size: 0.8em;
     };
 `;

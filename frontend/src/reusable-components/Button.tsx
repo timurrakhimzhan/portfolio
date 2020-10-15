@@ -12,7 +12,7 @@ export const Button = styled.button`
     color: var(--black-main);
     padding: 8px 0px;
     border: 0px;
-    font-size: 1rem;
+    font-size: var(--normal-text-size);
     cursor: pointer;
     :hover {
         background: var(--grey-background-dark);
@@ -20,7 +20,6 @@ export const Button = styled.button`
     @media only screen
     and (max-width: 480px) {
         padding: 14px 0px;
-        font-size: 1.3rem;
     };
     :disabled {
         cursor: not-allowed;

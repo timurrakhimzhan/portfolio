@@ -22,4 +22,7 @@ export class User extends BaseEntity{
 
     @Column({nullable: true})
     lastLoginDate!: Date;
+
+    @Column({default: false})
+    isConfirmed!: boolean
 }

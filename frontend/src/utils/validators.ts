@@ -1,11 +1,12 @@
 import {ObjectSchema} from "yup";
 import * as yup from 'yup';
+import {EMPTY_EMAIL, EMPTY_PASSWORD, INVALID_EMAIL, SHORT_PASSWORD} from "./constants";
 
 export const schemaAuthentication: ObjectSchema = yup.object().shape({
-    email: yup.string().required("Email field is empty").email("Email is invalid"),
-    password: yup.string().required("Password field is invalid").min(6, "Password should be longer than 6 characters")
+    email: yup.string().required(EMPTY_EMAIL).email(INVALID_EMAIL),
+    password: yup.string().required(EMPTY_PASSWORD).min(6, SHORT_PASSWORD)
 });
 
 export const schemaForgotPass: ObjectSchema = yup.object().shape({
-    email: yup.string().required("Email field is empty").email("Email is invalid"),
+    email: yup.string().required(EMPTY_EMAIL).email(INVALID_EMAIL),
 });

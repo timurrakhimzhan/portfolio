@@ -1,15 +1,27 @@
-import {Credentials, CredentialsError} from "../typings";
+import {Credentials, CredentialsError, ErrorType} from "../typings";
 import * as yup from 'yup';
-import {ObjectSchema, ValidationError} from "yup";
+import {ObjectSchema, Schema, ValidationError} from "yup";
+import {EMPTY_EMAIL, EMPTY_PASSWORD, INVALID_EMAIL, INVALID_UUID, SHORT_PASSWORD} from "./constants";
 
-const schema: ObjectSchema = yup.object().shape({
-    email: yup.string().required("Email field is empty").email("Email is invalid"),
-    password: yup.string().required("Password field is invalid").min(6, "Password should be longer than 6 characters")
+const authSchema: ObjectSchema = yup.object().shape({
+    email: yup.string().required(EMPTY_EMAIL).email(INVALID_EMAIL),
+    password: yup.string().required(EMPTY_PASSWORD).min(6, SHORT_PASSWORD)
 });
 
-export async function validate(credentials: Credentials): Promise<Array<CredentialsError>> {
+const uuidSchema: Schema<string> = yup.string().required(INVALID_UUID).uuid(INVALID_UUID);
+
+export async function validateUuid(uuid: string): Promise<Array<ErrorType>> {
     try {
-        await schema.validate(credentials, {abortEarly: false});
+        await uuidSchema.validate(uuid);
+        return []
+    } catch(error) {
+        return [{message: error.message}];
+    }
+}
+
+export async function validateAuth(credentials: Credentials): Promise<Array<CredentialsError>> {
+    try {
+        await authSchema.validate(credentials, {abortEarly: false});
         return [];
     } catch(error) {
         if(error instanceof ValidationError) {

@@ -1,21 +1,20 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import {UserState} from "../../../../typings";
 import {fetchUserInfo} from "../../../utils/apiCalls";
-import {initialState} from "./userSlice";
 
-export const fetchUserInfoAction = createAsyncThunk('user/fetchUserInfo', async (): Promise<UserState> => {
+export const fetchUserInfoAction = createAsyncThunk('user/fetchUserInfo', async (state, thunkAPI): Promise<{[key in keyof UserState]?: UserState[key]}>=> {
     const csrfToken = localStorage.getItem("csrfToken");
     if (!csrfToken) {
-        return initialState
+        throw new Error();
     }
     try {
         const response = await fetchUserInfo(csrfToken);
         const {uuid, email} = response.data as UserState;
         if (!uuid || !email) {
-            return initialState;
+            throw new Error();
         }
-        return {...initialState, logged_in: true, email, uuid}
+        return {logged_in: true, email, uuid}
     } catch (error) {
-        return initialState
+        throw new Error()
     }
 });

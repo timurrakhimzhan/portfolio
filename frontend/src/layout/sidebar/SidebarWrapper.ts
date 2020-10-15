@@ -20,5 +20,5 @@ export const SideBarWrapper = styled.div`
         left: ${({show}: ShowToggleProps) => show ? "0" : "-90%"};
     };
     color: var(--black-main);
-    font-size: 1.7rem;
+    font-size: var(--big-text-size);
 `;

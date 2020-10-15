@@ -5,5 +5,5 @@ export const InputItemWrapper = styled.div`
     flex-direction: column;
     color: var(--black-1);
     width: 100%;
-    font-size: 1rem;
+    font-size: var(--normal-text-size);
 `;

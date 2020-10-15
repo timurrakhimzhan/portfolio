@@ -5,6 +5,6 @@ export const ErrorLabelWrapper = styled.div`
     flex-direction: start;
     width: 100%;
     color: var(--red-main);
-    font-size: 0.8rem;
+    font-size: var(--small-text-size);
     text-align: center;
 `;

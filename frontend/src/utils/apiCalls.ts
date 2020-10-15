@@ -25,3 +25,7 @@ export function fetchUserInfo(csrfToken: string) {
         },
     );
 }
+
+export function confirmAccount(uuid: string, token: string) {
+    return axios.post(`${API_URL}/confirm/${uuid}/${token}`);
+}

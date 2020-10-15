@@ -10,16 +10,18 @@ export function Sidebar({show, onClickItem}: ShowToggleProps & {onClickItem: Fun
     const history = useHistory();
     return <SideBarWrapper show={show}>
         <VerticalSpace height={"10%"}/>
-        {routes.filter((route) => !route.protection || route.protection.protectionFunc()).map((route) =>
-            <React.Fragment key={route.path}>
-                <span onClick={() => {
-                    history.push(route.path);
-                    onClickItem();
-                }}>
-                    {route.label.toUpperCase()}
-                </span>
-                <VerticalSpace height={"30px"}/>
-            </React.Fragment>
+        {routes.filter((route) => route.label)
+            .filter((route) => !route.protection || route.protection.protectionFunc())
+            .map((route) =>
+                <React.Fragment key={route.path}>
+                    <span onClick={() => {
+                        history.push(route.path);
+                        onClickItem();
+                    }}>
+                        {route.label!.toUpperCase()}
+                    </span>
+                    <VerticalSpace height={"30px"}/>
+                </React.Fragment>
         )}
     </SideBarWrapper>
 }

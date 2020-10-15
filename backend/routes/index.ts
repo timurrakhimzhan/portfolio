@@ -1,14 +1,13 @@
 import {Router} from "express";
 import {registrationHandle} from "./registration";
 import {loginHandle} from "./login";
-import {fetchUserInfoHandler} from "./protectedRoutes/fetchUserInfo";
-import {isAuth} from "../middlewares/isAuth";
-import {logoutHandler} from "./protectedRoutes/logout";
+import {protectedRouter} from "./protectedRoutes";
+import {confirmHandle} from "./confirm";
 
 export const router: Router = Router();
 
 router.post("/register", registrationHandle);
 router.get("/login", loginHandle);
-router.get("/fetchUserInfo", isAuth, fetchUserInfoHandler);
-router.get("/logout", isAuth, logoutHandler);
+router.post("/confirm/:uuid/:token", confirmHandle);
+router.use(protectedRouter);
 

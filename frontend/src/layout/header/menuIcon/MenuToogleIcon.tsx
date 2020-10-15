@@ -5,13 +5,12 @@ import styled from "styled-components";
 
 
 export function MenuToggleIcon({onClick}: {onClick: () => any}) {
-    return <CustomFontAwesome icon={faBars} onClick={onClick}/>
+    return <CustomFontAwesome icon={faBars} onClick={onClick} size={"2x"}/>
 }
 
 const CustomFontAwesome = styled(FontAwesomeIcon)`
     color: var(--black-main);
     cursor: pointer;
-    font-size: 2em;
     :hover {
         color: var(--grey-main);
     }
