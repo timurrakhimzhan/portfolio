@@ -9,3 +9,7 @@ export function setRedisValue(uuid: string, type: string, value: string | number
 export function getRedisValue(uuid: string, type: string) {
     return redis.get(`${uuid}:${type}`);
 }
+
+export function removeRedisValue(uuid: string, type: string) {
+    return redis.del(`${uuid}:${type}`)
+}

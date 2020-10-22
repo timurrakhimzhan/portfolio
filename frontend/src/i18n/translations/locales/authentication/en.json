@@ -1,0 +1,19 @@
+{
+  "authentication": {
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "forgotLink": "Forgot?",
+    "loginButton": "Log in",
+    "registerButton": "Register",
+    "signInButton": "Sign in",
+    "restorePassButton": "Restore",
+    "emptyEmail": "Email field is empty",
+    "invalidEmail": "Email is invalid",
+    "incorrectPassword": "",
+    "emptyPassword": "Password field is empty",
+    "shortPassword": "Password should be longer than 6 characters",
+    "registrationThanks": "Thank you for registration. Please check the email for verification letter",
+    "confirmedRegistration": "Account has been successfully confirmed",
+    "errorConfirmedRegistration": "Failed to confirm account"
+  }
+}

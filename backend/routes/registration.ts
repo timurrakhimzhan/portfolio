@@ -41,7 +41,7 @@ export async function registrationHandle(req: Request, res: Response) {
         }
 
 
-        res.status(200).send();
+        res.send();
     } catch(error) {
         console.log("Error", error);
         res.status(500).send([{message: error.message}]);

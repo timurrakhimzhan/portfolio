@@ -20,4 +20,5 @@ export interface ErrorType {
 export type SessionObject = {
     csrfSecret?: string;
     uuid?: string;
+    forgotToken?: string;
 }

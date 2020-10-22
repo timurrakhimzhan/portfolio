@@ -1,0 +1,18 @@
+{
+  "authentication": {
+    "emailLabel": "Электронная почта",
+    "passwordLabel": "Пароль",
+    "forgotLink": "Забыли пароль?",
+    "loginButton": "Войти",
+    "registerButton": "Зарегистрироваться",
+    "signInButton": "Авторизоваться",
+    "restorePassButton": "Восстановить",
+    "emptyEmail": "Не заполнено поле адреса электронной почты",
+    "invalidEmail": "Неверный формат адреса электронной почты",
+    "emptyPassword": "Не заполнено поле пароля",
+    "shortPassword": "Минимальная длинна пароля 6 символов",
+    "registrationThanks": "Спасибо за регистрацию. Ссылка для подтверждения аккаунта была выслана Вам на почту",
+    "confirmedRegistration": "Аккаунт был успешно подтвержден",
+    "errorConfirmedRegistration": "Ошибка при подтверждении аккаунта"
+  }
+}

@@ -14,11 +14,10 @@ import {
     USER_DOES_NOT_EXISTS
 } from "../utils/constants";
 import {getRedisValue, redis, setRedisValue} from "../utils/redis";
-import {Map} from "typescript";
 
 
 export async function loginHandle(req: Request, res: Response){
-    const {email, password} = req.query as Credentials;
+    const {email, password} = req.body as Credentials;
     try {
         const credentialsError: Array<CredentialsError> = await validateAuth({email, password});
         if(credentialsError.length) {

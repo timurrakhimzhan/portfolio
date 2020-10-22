@@ -3,6 +3,8 @@ import * as yup from 'yup';
 import {ObjectSchema, Schema, ValidationError} from "yup";
 import {EMPTY_EMAIL, EMPTY_PASSWORD, INVALID_EMAIL, INVALID_UUID, SHORT_PASSWORD} from "./constants";
 
+const emailSchema: Schema<string> = yup.string().required(EMPTY_EMAIL).email(INVALID_EMAIL);
+
 const authSchema: ObjectSchema = yup.object().shape({
     email: yup.string().required(EMPTY_EMAIL).email(INVALID_EMAIL),
     password: yup.string().required(EMPTY_PASSWORD).min(6, SHORT_PASSWORD)
@@ -32,5 +34,14 @@ export async function validateAuth(credentials: Credentials): Promise<Array<Cred
             return credentialsErrors;
         }
         throw error;
+    }
+}
+
+export async function validateEmail(email: string): Promise<Array<ErrorType>> {
+    try {
+        await emailSchema.validate(email);
+        return []
+    } catch(error) {
+        return [{message: error.message}];
     }
 }

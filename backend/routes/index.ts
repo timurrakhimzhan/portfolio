@@ -2,12 +2,14 @@ import {Router} from "express";
 import {registrationHandle} from "./registration";
 import {loginHandle} from "./login";
 import {protectedRouter} from "./protectedRoutes";
-import {confirmHandle} from "./confirm";
+import {confirmPageHandle} from "./pageValidations/confirmPage";
+import {forgotPageHandle} from "./pageValidations/forgotPage";
 
 export const router: Router = Router();
 
 router.post("/register", registrationHandle);
-router.get("/login", loginHandle);
-router.post("/confirm/:uuid/:token", confirmHandle);
+router.post("/login", loginHandle);
+router.post("/confirmPage", confirmPageHandle);
+router.post("/forgotPage", forgotPageHandle);
 router.use(protectedRouter);
 
